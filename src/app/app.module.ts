@@ -5,8 +5,10 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 import { HeroesModule } from './heroes/heroes.module';
+import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,8 @@ import { HeroesModule } from './heroes/heroes.module';
     FormsModule,
     HttpModule,
     HeroesModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: '/heroes',
-        pathMatch: 'full'
-      }
-    ])
+    CrisisCenterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
