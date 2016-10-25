@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
 
 import { HeroListComponent } from './hero-list.component';
 import { HeroDetailComponent } from './hero-detail.component';
@@ -13,7 +14,8 @@ import { HeroRoutingModule } from './heroes-routing.module';
   imports: [
     CommonModule,
     FormsModule,
-    HeroRoutingModule
+    HeroRoutingModule,
+    MaterialModule.forRoot()
   ],
   declarations: [
     HeroListComponent,
