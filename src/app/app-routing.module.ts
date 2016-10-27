@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { CrisisListComponent } from './crisis-center/crisis-list.component';
-
 @NgModule({
   imports: [
     RouterModule.forRoot([
@@ -11,10 +9,10 @@ import { CrisisListComponent } from './crisis-center/crisis-list.component';
         redirectTo: '/heroes',
         pathMatch: 'full'
       },
-      {
-        path: 'crisis-center',
-        component: CrisisListComponent
-      }
+      // {
+      //   path: 'crisis-center',
+      //   component: CrisisListComponent
+      // }
     ])
   ],
   exports: [ RouterModule ],
