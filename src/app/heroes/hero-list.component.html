@@ -2,6 +2,7 @@
 <ul class="items">
   <li *ngFor="let hero of heroes"
     [class.selected]="isSelected(hero)"
+    [@heroState]="hero.state"
     (click)="onSelect(hero)">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>

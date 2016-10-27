@@ -1,11 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, trigger,
+  state,
+  style,
+  transition,
+  animate } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { Hero, HeroService } from './hero.service';
 
 @Component({
   selector: 'app-heroes',
-  templateUrl: './hero-list.component.html'
+  templateUrl: './hero-list.component.html',
+  animations: [
+    trigger('heroState', [
+      state('inactive', style({
+        backgroundColor: '#eee',
+        transform: 'scale(1)'
+      })),
+      state('active',   style({
+        backgroundColor: '#cfd8dc',
+        transform: 'scale(1.1)'
+      })),
+      transition('inactive => active', animate('100ms ease-in')),
+      transition('active => inactive', animate('100ms ease-out'))
+    ])
+  ]
 })
 export class HeroListComponent implements OnInit {
   heroes: Hero[];
@@ -22,7 +40,12 @@ export class HeroListComponent implements OnInit {
     this.route.params.forEach((params: Params) => {
       this.selectedId = +params['id'];
       this.service.getHeroes()
-        .then(heroes => this.heroes = heroes);
+        .then(heroes => {
+          heroes.map(hero => {
+            // hero.state = hero.id === this.selectedId ? 'active' : 'inactive';
+          });
+          this.heroes = heroes;
+        });
     });
   }
 
