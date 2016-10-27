@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { AdminModule } from './admin/admin.module';
 import { HeroesModule } from './heroes/heroes.module';
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 
@@ -20,6 +21,7 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
     HttpModule,
     HeroesModule,
     CrisisCenterModule,
+    AdminModule,
     AppRoutingModule
   ],
   providers: [],
