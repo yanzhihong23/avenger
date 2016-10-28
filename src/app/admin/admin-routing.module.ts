@@ -6,6 +6,7 @@ import { AdminDashboardComponent } from './admin-dashboard.component';
 import { ManageCrisesComponent } from './manage-crisis.component';
 import { ManageHeroesComponent } from './manage-hero.component';
 
+import { AuthGuard } from '../auth-guard.service';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { ManageHeroesComponent } from './manage-hero.component';
       {
         path: 'admin',
         component: AdminComponent,
+        canActivate: [AuthGuard],
         children: [
           {
             path: '',

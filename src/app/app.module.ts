@@ -6,14 +6,19 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './login.component';
+import { LoginRoutingModule } from './login-routing.module';
 
 import { AdminModule } from './admin/admin.module';
 import { HeroesModule } from './heroes/heroes.module';
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 
+import { AuthGuard } from './auth-guard.service';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -22,9 +27,10 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
     HeroesModule,
     CrisisCenterModule,
     AdminModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LoginRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
