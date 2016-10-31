@@ -14,6 +14,7 @@ import { HeroesModule } from './heroes/heroes.module';
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 
 import { AuthGuard } from './auth-guard.service';
+import { DialogService } from './dialog.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,10 @@ import { AuthGuard } from './auth-guard.service';
     AppRoutingModule,
     LoginRoutingModule
   ],
-  providers: [AuthGuard],
-  bootstrap: [AppComponent]
+  providers: [ 
+    AuthGuard, 
+    DialogService
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

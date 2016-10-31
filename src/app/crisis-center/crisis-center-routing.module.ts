@@ -6,6 +6,8 @@ import { CrisisListComponent } from './crisis-list.component';
 import { CrisisDetailComponent } from './crisis-detail.component';
 import { CrisisCenterComponent } from './crisis-center.component';
 
+import { CanDeactivateGuard } from '../can-deactivate-guard.service';
+
 
 @NgModule({
   imports: [
@@ -20,7 +22,8 @@ import { CrisisCenterComponent } from './crisis-center.component';
             children: [
               {
                 path: ':id',
-                component: CrisisDetailComponent
+                component: CrisisDetailComponent,
+                canDeactivate: [CanDeactivateGuard]
               },
               {
                 path: '',
