@@ -8,6 +8,8 @@ import { CrisisCenterComponent } from './crisis-center.component';
 
 import { CanDeactivateGuard } from '../can-deactivate-guard.service';
 
+import { CrisisDetailResolve } from './crisis-detail-resolve.service';
+
 
 @NgModule({
   imports: [
@@ -23,7 +25,10 @@ import { CanDeactivateGuard } from '../can-deactivate-guard.service';
               {
                 path: ':id',
                 component: CrisisDetailComponent,
-                canDeactivate: [CanDeactivateGuard]
+                canDeactivate: [CanDeactivateGuard],
+                resolve: {
+                  crisis: CrisisDetailResolve
+                }
               },
               {
                 path: '',
@@ -35,6 +40,7 @@ import { CanDeactivateGuard } from '../can-deactivate-guard.service';
       }
     ])
   ],
-  exports: [ RouterModule ]
+  exports: [ RouterModule ],
+  providers: [ CrisisDetailResolve ]
 })
 export class CrisisCenterRoutingModule { }

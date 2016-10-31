@@ -55,10 +55,15 @@ export class CrisisDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.forEach((params: Params) => {
-      let id = +params['id'];
-      this.service.getCrisis(id).then(crisis => this.crisis = crisis);
+    // use resolve data
+    this.route.data.forEach((data: { crisis: Crisis }) => {
+      this.editName = data.crisis.name;
+      this.crisis = data.crisis;
     });
+    // this.route.params.forEach((params: Params) => {
+    //   let id = +params['id'];
+    //   this.service.getCrisis(id).then(crisis => this.crisis = crisis);
+    // });
   }
 
   cancel() {
