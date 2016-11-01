@@ -7,6 +7,10 @@ import { CanDeactivateGuard } from './can-deactivate-guard.service';
   imports: [
     RouterModule.forRoot([
       {
+        path: 'admin',
+        loadChildren: 'app/admin/admin.module#AdminModule'
+      },
+      {
         path: '',
         redirectTo: '/heroes',
         pathMatch: 'full'

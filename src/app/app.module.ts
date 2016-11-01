@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
 
-import { AdminModule } from './admin/admin.module';
 import { HeroesModule } from './heroes/heroes.module';
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 
@@ -27,7 +26,6 @@ import { DialogService } from './dialog.service';
     HttpModule,
     HeroesModule,
     CrisisCenterModule,
-    AdminModule,
     AppRoutingModule,
     LoginRoutingModule
   ],
