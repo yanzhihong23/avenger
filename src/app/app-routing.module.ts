@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { AuthGuard } from './auth-guard.service';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
 
 @NgModule({
@@ -8,7 +9,8 @@ import { CanDeactivateGuard } from './can-deactivate-guard.service';
     RouterModule.forRoot([
       {
         path: 'admin',
-        loadChildren: 'app/admin/admin.module#AdminModule'
+        loadChildren: 'app/admin/admin.module#AdminModule',
+        canLoad: [ AuthGuard ]
       },
       {
         path: '',

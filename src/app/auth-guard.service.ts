@@ -3,6 +3,7 @@ import {
   CanActivate,
   CanActivateChild,
   Router,
+  Route,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   NavigationExtras
@@ -22,6 +23,12 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     return this.canActivate(route, state);
+  }
+
+  canLoad(route: Route): boolean {
+    let url = `/${route.path}`;
+
+    return this.checkUrl(url);
   }
 
   checkUrl(url: string): boolean {
