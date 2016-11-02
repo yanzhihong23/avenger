@@ -15,7 +15,7 @@ import { CrisisDetailResolve } from './crisis-detail-resolve.service';
   imports: [
     RouterModule.forChild([
       {
-        path: 'crisis-center',
+        path: '',
         component: CrisisCenterComponent,
         children: [
           {

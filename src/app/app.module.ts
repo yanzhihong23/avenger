@@ -10,7 +10,6 @@ import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
 
 import { HeroesModule } from './heroes/heroes.module';
-import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 
 import { AuthGuard } from './auth-guard.service';
 import { DialogService } from './dialog.service';
@@ -25,7 +24,6 @@ import { DialogService } from './dialog.service';
     FormsModule,
     HttpModule,
     HeroesModule,
-    CrisisCenterModule,
     AppRoutingModule,
     LoginRoutingModule
   ],

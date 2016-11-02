@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 
 import { AuthGuard } from './auth-guard.service';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
@@ -17,11 +17,13 @@ import { CanDeactivateGuard } from './can-deactivate-guard.service';
         redirectTo: '/heroes',
         pathMatch: 'full'
       },
-      // {
-      //   path: 'crisis-center',
-      //   component: CrisisListComponent
-      // }
-    ])
+      {
+        path: 'crisis-center',
+        loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule'
+      }
+    ], {
+      preloadingStrategy: PreloadAllModules
+    })
   ],
   exports: [ RouterModule ],
   providers: [ CanDeactivateGuard ],
