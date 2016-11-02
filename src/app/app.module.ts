@@ -14,6 +14,8 @@ import { HeroesModule } from './heroes/heroes.module';
 import { AuthGuard } from './auth-guard.service';
 import { DialogService } from './dialog.service';
 
+import { PreloadSelectedModules } from './selective-preload-strategy';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { DialogService } from './dialog.service';
   ],
   providers: [ 
     AuthGuard, 
-    DialogService
+    DialogService,
+    PreloadSelectedModules
   ],
   bootstrap: [ AppComponent ]
 })

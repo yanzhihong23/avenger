@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, PreloadAllModules } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { AuthGuard } from './auth-guard.service';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
+
+import { PreloadSelectedModules } from './selective-preload-strategy';
 
 @NgModule({
   imports: [
@@ -19,10 +21,13 @@ import { CanDeactivateGuard } from './can-deactivate-guard.service';
       },
       {
         path: 'crisis-center',
-        loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule'
+        loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule',
+        data: {
+          preload: true
+        }
       }
     ], {
-      preloadingStrategy: PreloadAllModules
+      preloadingStrategy: PreloadSelectedModules
     })
   ],
   exports: [ RouterModule ],
