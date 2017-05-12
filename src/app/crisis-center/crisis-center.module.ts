@@ -17,7 +17,7 @@ import { CrisisCenterRoutingModule } from './crisis-center-routing.module';
     CommonModule,
     FormsModule,
     CrisisCenterRoutingModule,
-    MaterialModule.forRoot()
+    MaterialModule
   ],
   declarations: [
     CrisisCenterComponent,

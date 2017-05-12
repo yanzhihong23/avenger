@@ -1,8 +1,12 @@
 <h2>HEROES</h2>
 <div *ngIf="hero">
   <h3>"{{hero.name}}"</h3>
-  <md-input placeholder="ID" value="{{hero.id}}" disabled></md-input>
-  <md-input [(ngModel)]="hero.name" placeholder="Name"></md-input>
+  <md-input-container>
+    <input mdInput placeholder="ID" value="{{hero.id}}" disabled>
+  </md-input-container>
+  <md-input-container>
+    <input mdInput placeholder="Name" [(ngModel)]="hero.name">
+  </md-input-container>
   <p>
     <button md-raised-button (click)="gotoHeroes()">Back</button>
   </p>

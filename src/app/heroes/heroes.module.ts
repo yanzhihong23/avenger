@@ -15,7 +15,7 @@ import { HeroRoutingModule } from './heroes-routing.module';
     CommonModule,
     FormsModule,
     HeroRoutingModule,
-    MaterialModule.forRoot()
+    MaterialModule
   ],
   declarations: [
     HeroListComponent,

@@ -7,8 +7,8 @@ import { AuthService } from './auth.service';
     <h2>Login</h2>
     <p>{{message}}</p>
     <p>
-      <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-      <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
+      <button (click)="login()" md-raised-button *ngIf="!authService.isLoggedIn">Login</button>
+      <button (click)="logout()" md-raised-button *ngIf="authService.isLoggedIn">Logout</button>
     </p>`
 })
 export class LoginComponent {

@@ -8,7 +8,7 @@ import { Crisis, CrisisService } from './crisis.service';
 export class CrisisDetailResolve implements Resolve<Crisis> {
   constructor(private cs: CrisisService, private router: Router) {}
 
-  resolve(route: ActivatedRouteSnapshot): Promise<Crisis>|boolean {
+  resolve(route: ActivatedRouteSnapshot): Promise<Crisis> {
     let id = +route.params['id'];
 
     return this.cs.getCrisis(id).then(crisis => {
